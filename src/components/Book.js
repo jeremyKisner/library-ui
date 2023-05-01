@@ -23,7 +23,6 @@ const getCopies = (numOfCopies) => {
 }
 
 const Book = (book) => {
-  console.log('book ', book)
   const [numOfCopies, setCopies] = useState(book.data.copies);
 
   const onclick = () => {

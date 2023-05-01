@@ -2,7 +2,6 @@ import Book from './Book'
 import Grid from '@mui/material/Grid';
 
 const Library = (props) => {
-  console.log('this props', props);
   return (
     <>
       <h1>Library</h1>
