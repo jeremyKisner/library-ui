@@ -15,7 +15,6 @@ const Home = (props) => {
       req.open("GET", "http://127.0.0.1:5000/books");
       req.send();
     }, []);
-
     return (
         <>
             <Library books={books} cart={props.cart} addToCart={props.addToCart}/>
