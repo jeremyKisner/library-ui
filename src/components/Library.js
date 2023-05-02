@@ -10,7 +10,7 @@ const Library = (props) => {
           <Grid container justifyContent="center" spacing={8}>
             {props.books.map((value, index) => (
               <Grid key={index} item>
-                <Book key={index} data={value} index={index} addToCart={props.addToCart} />
+                <Book key={index} data={value} index={index} dispatch={props.props.dispatch} />
               </Grid>
             ))}
           </Grid>

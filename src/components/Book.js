@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import { CartTypes } from "../reducers/cartReducer";
 
 
 const sendCheckout = async (book) => {
@@ -25,11 +26,18 @@ const getCopies = (numOfCopies) => {
 const Book = (book) => {
   const [numOfCopies, setCopies] = useState(book.data.copies);
 
+  const addToCart = (dispatch) => {
+    dispatch({
+      type: CartTypes.ADD,
+      book: book.data
+    })
+  };
+
   const onclick = () => {
     sendCheckout(book.data.library_id);
     var target = getCopies(numOfCopies);
     setCopies(target);
-    book.addToCart(book.data);
+    addToCart(book.dispatch);
   };
 
   return (
